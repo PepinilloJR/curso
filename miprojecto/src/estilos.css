@@ -1,0 +1,154 @@
+* {
+    margin: 0px;
+}
+
+.cuerpo {
+    display: grid;
+    grid-template-rows: 100% 100%;
+    grid-template-columns: 1fr 20%;
+    outline: 1px crimson;
+    justify-content: center;
+}
+
+
+.menu {
+    display: flex;
+    border-radius: 20px;
+    position: sticky;
+    justify-self: center;
+    align-self: center;
+    justify-content:space-evenly;
+    top: 0px;
+    background-color: rgb(46, 169, 231);
+    grid-row: 1;
+    grid-column: 1 / 4;
+    width: 500px;
+    height: 100%;
+}
+
+
+.posts {
+    background-color: rgb(255, 255, 255);
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+}
+
+
+.post {
+    background-color: rgb(255, 255, 255);
+    margin: 20px;
+    padding: 5px;
+    border-radius: 20px;
+}
+
+
+.postTitulo {
+    background-color: rgb(255, 255, 255);
+    margin: 10px;
+    border-radius: 10px;
+}
+
+
+.postParrafo {
+    background-color: rgb(255, 255, 255);
+    margin: 10px;
+    border-radius: 10px;
+}
+
+
+.perfil {
+    background-color: rgb(255, 255, 255);
+    grid-row: 2;
+    grid-column: 2;
+    width: 100%;
+    height: 100%;
+
+}
+
+.Container {
+    background-color: rgb(175, 222, 255);
+    margin: 40px;
+    padding: 10px;
+    border-radius: 20px;
+}
+
+.ContainerPerfil {
+    position: sticky;
+    top: 0px;
+    background-color: rgb(175, 222, 255);
+    margin: 40px;
+    padding: 10px;
+    border-radius: 20px;
+}
+
+
+.boton {
+    background-color: rgb(46, 169, 231);
+    border: 0;
+    width: 90px;
+    height: 100%;
+    padding: 4px;
+    border-radius: 20px;
+}
+
+
+.boton:hover {
+    background-color: rgb(143, 198, 226);
+    border: 0;
+    transition: 0.5s;
+}
+
+
+.botonDown {
+    background-color: rgb(254, 254, 254);
+    border: 0;
+    width: 90px;
+    height: 100%;
+    padding: 4px;
+    border-radius: 20px;
+    box-shadow: 1px 1px ;
+}
+
+
+.botonDown:hover {
+    transition: 0.5s;
+    background-color: rgb(182, 182, 182);
+    border: 0;
+    width: 90px;
+    height: 100%;
+    padding: 6px;
+    border-radius: 20px;
+}
+
+
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.inputForm {
+    width: 100%;
+    height: 100%;
+    margin: 5px;
+}
+
+.botonSubmit {
+    background-color: rgb(46, 169, 231);
+    border: 0;
+    width: 100%;
+    height: 100%;
+    padding: 8px;
+    border-radius: 20px;
+}
+
+.botonSubmit:hover {
+    background-color: rgb(143, 204, 235);
+    border: 0;
+    width: 100%;
+    height: 100%;
+    padding: 8px;
+    border-radius: 20px;
+}

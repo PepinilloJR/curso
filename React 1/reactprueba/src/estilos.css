@@ -1,0 +1,37 @@
+.boton {
+    background-color: black;
+    color: white;
+    margin: auto;
+    font-weight: bolder;
+    padding: 15px;
+    border: 1px white solid;
+    border-radius: 10px;
+
+}
+.botonMalo {
+    background-color: white;
+    color: black;
+    margin: auto;
+    font-weight: bolder;
+    padding: 15px;
+    border: 1px black solid;
+    border-radius: 10px;
+
+}
+
+.icono {
+    background-color: red;
+    color: black;
+    font-size: 50px;
+    margin: auto;
+    margin-top: auto;
+    padding: 5px;
+    border: 1px white solid;
+}
+
+.contador {
+    display: flex;
+    background-color:cornflowerblue;
+    border: 1px white solid;
+    border-radius: 10px;
+}

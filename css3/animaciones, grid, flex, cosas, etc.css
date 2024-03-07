@@ -1,0 +1,302 @@
+/* para mejorar el aspecto, hay que usar box y otro tipo de cuestiones para animar y demas bla bla bla */
+/* hasta ahora menejamos cajas, pero no vimos todas las propiedades, hay algunas interesantes
+*/
+
+* {
+    margin: 0px;
+
+}
+
+.caja {
+    margin: 50px;
+    background-color: violet;
+    box-sizing: content-box; /* por defecto, el tamaño de la caja se se suman
+    los padding, bordes y margenes, por lo que si tiene width 600px, se le suma a su vez su padding
+    y sus margenes y bordes */
+    box-sizing: border-box; /* opcion no por defecto, que hace que el tamaño de la caja
+    se adapte al width indicado completando con los bordes, margenes y padding */
+    border-radius: 50px; /* el border radious hace que se redondeen los bordes de la caja, mientras mas alto es el radio mas cirular se vera */
+    box-shadow: 1px 2px 15px red;  /* le da sombra a la caja */
+              /*x  y desenfoque color */
+    text-shadow: 2px 2px 7px; /* le da sombra al texto, se ingresa lo mismo que en box shadow
+    */
+    opacity: 0.5; /* opacidad de la caja, va de 1 a 0 */
+    /* una muy importante propiedad del box es el transform, es una propiedad que llama a funciones las cuales modifican cosas con respecto al 
+    posicionamiento, tamaño, rotacion, etc. de la caja */
+    transform: rotate(0deg); /* rota sobre su propio eje 20 grados, este es un ejemplo de muchos posibles pero es extenso */
+    outline: 10px solid blue; /* similar a border, pero no ocupa un espacio en el bloque, por lo que no amplia su tamaño en pixeles */
+
+    /* ahora es util conocer a profundida la propiedad position
+    cuando position es static, se dice que no esta posicionada, es decir, no se le puede aplicar las propiedades del position, por defecto, toda caja es static
+
+    cuando position es relative, la caja tiene las propiedades top, left, right, bottom, que mueven n pixeles hacia una direccion a la caja
+    lo interesante es que el espacio ocupado no cambia apesar de que se movio la caja, por lo que el espacio ocupado se quedara en su posicion original
+    las top y left son mas importantes por lo que sobrepasan a las de right y bottom
+    cuando la caja se posisiona, adquiere un valor de su Z-index, que es su profundidad, mientras mayor profundidad, aparecera por encima de los valores por debajo
+
+    position: relative
+    z-index: 10
+
+    el position absolute, mueve el espacio ocupado junto a su dibujo, ahora, el punto de referencia deja de ser este espacio ocupado y 
+    toma de referencia al contenedor o padre de la caja, como lo podria ser nuestro body por ejemplo, solo si este contenedor esta tambien posicionado
+    si no es asi, toma de referencia el viewport
+
+    con fixed sucede lo mismo, debemos colocarlo en un contenedor posicionado para evitar cosas raras, lo interesante de fixed es que 
+    queda fijado en pantalla, por lo que seguira a estando siempre a la vista 
+
+    el sticky, es una mezcla entre el relative y el fixed, basicamente, mantiene su espacio por lo que mantiene su punto de referencia
+    y lo interesante, es que a partir de que ocupe en pantalla cierto pixel, determinado por un top, por ejemplo top: 0 (arriba del todo)
+    el bloque quedara fijado a la pantalla y si volvemos a la posicion anterior, volvera a ser un relative */
+
+    position: sticky;
+    top: 0;
+    /* si se da el caso de que un contenido sobrepasa el tamaño de la caja, definimos overflow
+    que definira que se hace en esos casos, podemos dejarlo en default, que deja que se salga,
+    auto, que dara un scroll para ver el contenido que no entra y scroll si queremos obligar a que
+    se scrollee */
+
+}
+
+/* ahora, para empezar con las "animaciones" es util conocer los pseudoelementos y las 
+    pseudoclases
+
+    los pseudoelementos hacen referencia a partes escenciales de un bloque, como pueden ser 
+    la primera linea, primera palabra, placeholder,       selection
+    (first-line)      (first-letter)   (formato del       (formato de la seleccion con el mouse) 
+                                        placeholder 
+                                        para algun input)  
+
+    luego, podemos generar pseudoelementos, que se escriban antes o despues de una etiqueta, para cuestiones esteticas 
+    podemos formatearlos como cualquier elemento pero no ocuparan un espacio en el DOM
+    /* Añade un corazón antes de los enlaces */
+    a::before {
+        content: "♥";
+    } 
+    /* Añade un corazón despues de los enlaces */
+    a::after {
+        content: "♥";
+    } 
+
+
+    /* hay bastantes pseudoelementos 
+    los pseudo elementos se llaman asi */
+
+
+input::placeholder {
+    color: brown;
+
+
+}
+
+    /* luego, es importante aprender sobre pseudoclases, las psudoclases son escuchas de eventos
+    por ejemplo, cuando un mouse se posicione en un bloque especifico
+
+    este ultimo que mencionamos es el hover, cuando el mouse toque caja2, cambiara al formato 
+    que le dimos al especificar hover */
+
+    /*proba que hace cada uno aca */
+.caja2:focus {
+    margin: auto;
+    margin-top: 20px;
+    width: 500px;
+    background-color: rgb(255, 0, 0);
+    transition: background 1s, width 2s; /* el transition define a la caja cuanto tiempo va a tardar 
+    en colocarse en el formato definido en la caja, 
+    especificado en el transition que propiedad y cuanto tiempo en segundos, podemos elejir todas las propiedades
+    especificando all  */
+    transition: all 2s;
+}
+
+    /* otra subclase es :link, esta aplica un formato si un link aun no fue visitado, util para etiquetas <a> 
+    si queremos cambiar los visitados, usamos :visited
+    
+    uno muy util es el que sigue, el :active aplica un formato si se le mantiene presionado el click izquierdo
+    el cuasihermano del active es el :focus, este aplica un formato cuando se le hace click y cuando se deja de enfocar
+    se deja de aplicar ese formato, el :focus solo funciona con inputs y botones */
+
+
+
+    /* esas fueron las pseudoclases, otra propiedad que es util aprender es el Object-fit, util para el manejo de imagenes
+    este ajusta de diferentes formas las imagenes dentro de su contenedor
+    Object-fit: cover -> cubre todo el contenedor pero recortando la imagen y aumentando su width
+    Object-fit: contain -> mantiene la imagen completa en su contenedor, ajustando sus resoluciones, no se estira pero genera
+                           bordes negros
+    Object-fit: fill -> rellena todo el contenedor ajustando y estirando la resolucion de la imagen
+    Object-fit: scale-down -> si la imagen es mas pequeña que el recuadro, la deja como esta, si es mas grande, le hace contain
+    esto nos sirve para cuando queremos que la imagen se adapte al tamaño de pantalla cuando cambiemos la resolucion, manteniendose
+    estatica en la posicion (algo asi)
+
+    junto a esto, podemos manipular la posicion de la imagen en su contenedor con Object-position 
+
+    si queremos modificar el cursor, usamos cursor:, y le determinamos un tipo de cursor 
+
+    /* otra propiedad interesante aprender a mayor profundidad es el display, ya vimos block e inline-block
+    
+    el siguiente mas interesante y moderno, y recomendable de usar, es el flex
+
+    flex actuara como bloque, pero su contenido inmediato, sera posicionado de modo que coincida 
+    con un eje interno del bloque denominado main axis, manteniendo en cada bloque la misma altura 
+    para poder coincidir con este eje
+    */
+
+/*definimos una clase para darle a su display el formato flex */
+.flex-container {
+    display: flex;
+    /* el flex container tiene muchas propiedades para afectar a sus flex-items */
+    /* flex direction cambia la direccion del main axis, cambiandolo de modo 
+    que los items son posicionados de otra forma, con respecto al mismo main axis pero 
+    movido */
+    flex-direction: row;
+    /* flex wrap especifica si los flex-items deben mantenerse en una linea 
+    o pueden ubicarse en varias filas segun vaya habiendo menos espacio en la primera */
+    /* wrap -> multiples lineas 
+       nowrap -> una sola linea */
+    flex-wrap: wrap;
+    /* forma rapida de setear el flex, primero colocamos el direction que queremos y luego
+    el wrap */
+    flex-flow: row wrap; 
+    /* alinea el contenido en el main axis de diferentes formas, como centrado, derecho, izquierdo, etc */
+    justify-content:right;
+    /* alinea los items de una linea en el cross axis
+    los mas basicos son los siguientes
+    stretch: se estira hacia abajo lo mas posible las alturas de los flex-items
+    center: se centran los flex-items en el centro del cross axis del flex-container
+    start: al comienzo del cross axis (arriba)
+    end: al final de cross axis (abajo)
+    */
+    align-items:  flex-end;
+    /* el aling content ajusta como le especifiquemos la distancia entre cada linea de 
+    items flex, si el aling items arreglaba como se ubicaban en el crossaxis los items
+    este otro arregla como se ubican entre ellas las lineas que los contienen
+    es como un justificado pero para el crossaxis*/
+    align-content:end;
+
+
+
+}
+
+/* luego, los items dentro del flex container tienen propias modificaciones posibles */
+.flex-item {
+    background-color: brown;
+    /* debemos definir un tamaño si los queremos fijos */
+    height: 1000px;
+    width: 50%;
+    /* los flex-items tambien tienen propiedades exclusivas */
+    /* aling-self sobrescribe el aling-item del flex container por uno propio para el flex-item */
+    align-self: center;
+    /* especifica cuanto debe creecer el flex-item del espacio restante, si colocamos un mismo 
+    valor numero a todos los flex-items, se repartiran el espacio en partes iguales 
+    a todos los flex-item, */
+    flex-grow: 1;
+    /* tamaño inicial del flex-item */
+    flex-basis: 200px;
+    /* especifica un factor de contraccion, los flex items se encogeran para llenar el contenedor */
+    flex-shrink: 200px;
+    /* order es para escoger la posicion en el main axis, algo asi como un z-input pero del main axis */
+}
+
+/* el ultimo display util, es grid, cuyo funcionamiento se pasa a explicar ahora */
+
+/* el grid divide al bloque en celdas de tamaño variable, denominadas grid cells, que tienen un display interno tipo flex, donde pueden ser posicionados elementos en ella
+el bloque que se subdivide es el denominado grid container, sus elementos son los gird items 
+
+luego, un grid track, es un conjunto de celdas, siendo una fila o una columna entera, a su vez
+existen grid areas, que son conjuntos de celdas consecutivas (no hay ni pes ni eles)
+definidas por el programador para ser usadas, un grid track es a su vez un grid area 
+
+*/
+
+.grid-container {
+    background-color: blue;
+    display: grid; /* definimos el display grid, si no definimos nada luego, actuara como bloque */
+    grid-template-rows: 200px 200px 200px; /* definimos las filas por sus tamaños, estas serian 3 filas */
+    grid-template-columns: 1fr 1fr 1fr; /* definimos las columnas por sus tamaños, estas serian 3 columnas */
+    /* fr significa espacio restante, si se lo damos a las columnas sera como un flex grow */
+
+    /* puede simplificarse con la funcion repeat(n, tamaño), no hace falta explicar mucho es obvio que hace */
+    /* repeat repite lo que coloquemos en los parametros, en lo parametros de una propiedad, puede servir para otras propiedades */
+    grid-template-rows: repeat(3, 200px);
+    grid-template-columns:  repeat(3, 1fr);
+    /* repeat toma funciones, utiles por ejemplo para crear galerias de fotos, para eso se usan funciones como minmax, autofit, autofill, googlearlas */
+
+    /* grid implicito */
+    grid-auto-rows: 200px; /* tamaño de las filas implicitas, si el flow esta en filas (defualt) */
+    grid-auto-columns: 200px; /* tamaño de las columnas implicitas, si el flow esta en columnas (defualt) */
+    grid-auto-flow: row; /* el flow indica si los grid-items implicitos se colocaran en una nueva fila o en una nueva columna, si colocamos dense, se colocaran de modo que no se generen espacios vacios internos */
+
+    /* como cada celda es un display flex, el grid container responde a justify-items, align-items, aling-content, justify-content, pero ojo, se aplican a todas las celdas */
+    /* con los aling-items y justify-items modificamos los alineados dentro de los flex o celdas */
+    /* mientras que, especificamente, el justify y aling content alinea todo el bloque de casillas dentro del espacio total del grid container*/
+
+    justify-items: center;
+    align-items: center;
+    justify-content: space-evenly;
+    align-content: space-evenly;
+    padding: 5px;
+
+}
+
+
+.grid-item {
+    outline: 1px red solid;
+}
+
+/* con esto referencio a un numero de grid-item del grid-container (hijos de la etiqueta), 
+para modificarlo, este caso el primero, 1 */
+.grid-item:nth-child(1) {
+    background-color: cadetblue;
+    grid-row: 1 / 3; /* indico que linea comienza y que linea termina */
+    grid-column: 1 / 3; /* indico que columna comienza y que columna termina */
+    /* esto se puede simplificar con la linea span */
+    grid-row: 1 / span 2; /* le indico que empieze en linea 1 y ocupe 2 lineas, sin especificar donde queda el final */
+    grid-column: 1 / span 2; /* le indico que empieze en columna 1 y ocupe 2 columnas, sin especificar donde queda el final */
+
+    /* como cada grid-item se mueve dentro de un flex, tiene diferentes alings-self y justify-self, pudiendo modificar mas profundamente 
+    como se posiciona el item dentro del flex
+    */
+
+    align-self: start;
+    justify-self: start;
+
+}
+
+/* esto que vimos es una forma de trabajar con el grid explicito, es decir, la division y los grid items, pero hay otra cuestion
+cuando al grid container le damos mas elementos que grid-cells, se generan con otro formato, se agrega una sola fila, sin columnas, y se colocan en esta
+ y es lo que denominamos grid implicito, la forma de dar formato a estos esta especificado en el grid container
+
+*/
+
+
+
+.caja2 {
+    margin: auto;
+    margin-top: 50px;
+    width: 600px;
+    background-color: aqua;
+
+
+}
+
+.imagen-derecha {
+    width: 80%;
+    height: 200px;
+    background-color: black;
+    float: left;
+    object-fit: cover;
+}
+
+.imagen-derecha:active {
+    width: 100%;
+    height: 100%;
+    background-color: red;
+    float: left;
+    object-fit:fill;
+    transition: all 2s;
+}
+
+
+
+
+/* ----------------------------------------- entrando en otros temas, vemos responsive desing -------------------------------- */
+
+

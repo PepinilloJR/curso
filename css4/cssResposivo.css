@@ -1,0 +1,170 @@
+/* para realizar nuestro primer menu responsivo, es util conocer los combinadores
+los combinadores son formas de aplicar reglas mediante herarquias 
+
+combinador +
+
+selecciona hermanos adyacentes, es decir, el segundo selector sigue al primero directamente
+y comparte mismo padre, si se cumple, se aplica un formato
+
+ej:
+
+h2 + p -> formato aplicado a todo p que siga directamente a un h2 de forma indemdiata
+
+similar al +, esta el ~
+
+este es similar pero segundo elemento no debe ser inmediato 
+
+luego, para hijos y padres, estan > y el espacio " "
+
+A > B -> formato aplicado a todo B que sea hijo directo de A
+
+A B -> formato aplicado a todo B que este dentro de A
+
+ */
+
+
+*{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	text-decoration: none;
+	border: none;
+	outline: none;
+}
+
+
+.header {
+	margin: auto;
+	background-color: rgb(0, 0, 0);
+	display: block;
+	position: sticky;
+	top: 0px;
+	width: 100%;
+}
+
+.menuPC {
+	margin: auto;
+	background-color: rgb(0, 0, 0);
+	display: block;
+	top: 0px;
+	width: 100%;
+
+}
+
+.botonPC {
+	display: inline-block;
+	background-color: aqua;
+	padding: 20px;
+	margin: 1px;
+
+}
+.botonPC:hover {
+	display: inline-blocK;
+	background-color: rgb(200, 248, 248);
+	padding: 20px;
+}
+
+
+
+
+
+
+/* consideramos las siguientes clases solo usables para resoluciones moviles, aproximadamente creemos que es 700px de ancho
+*/
+
+.menu { 
+	display: none;
+
+}
+.botonAN {
+	display: none;
+
+}
+.segundoMenu {
+	display: none;
+
+}
+.botonMenu {
+	display: none;
+
+
+}
+
+.fotoMenu {
+	display: none;
+}
+
+/* empezamos con el responsive desing llamamos a la siguiente funcion */
+/* esto nos dice que cuando la pantalla sea de cierto tamaño, reproducir los siguientes formatos
+*/
+
+@media only screen and (max-width: 700px) {
+
+	.menuPC {
+		display: none;
+	}
+	.botonPC {
+		display: none;
+	}
+
+	.menu {
+		position: absolute;
+		display: block;
+		width: 100%;
+		background-color: rgb(0, 0, 0);
+		height: 60px;
+	}
+	
+	.botonAN {
+		display: block;
+		background-color: aqua;
+		padding: 10px;
+		width: 100%;
+	}
+	.botonAN:hover {
+		display: block;
+		background-color: rgb(200, 248, 248);
+		padding: 10px;
+		width: 100%;
+	}
+	
+	.segundoMenu {
+		background-color: rgba(63, 153, 78, 0);
+		position: absolute;
+		top: -150px;
+		width: 50%;
+		display: block;
+		text-align: left;
+	}
+	
+	.botonMenu {
+		background-color: rgb(0, 0, 0);
+		display: block;
+		width: 50px;
+		height: 50px;
+		margin: 5px;
+	}
+	
+	
+	.fotoMenu {
+		display: block;
+		object-fit:scale-down;
+		width: 50px;
+		height: 50px;
+	}
+	
+	.botonMenu:hover {
+		background-color: rgb(36, 36, 36);
+	
+	}
+	.botonMenu:focus + .segundoMenu{
+		z-index: -1;
+		transition: 0.5s;
+		top: 100%;
+	
+	
+	}
+
+
+
+}

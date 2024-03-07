@@ -1,0 +1,49 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Pagina Principal</title>
+        <link rel="stylesheet" href="CSS/Estilos.css">
+    </head>
+
+
+<body>
+
+         
+
+    <form class="CajaInicioSesion" action="">
+    <div class="">
+        <p class="Csubtitulo2">Inicio De Sesión</p>
+    <p class=""><li class="botonFormulario"> Nombre <input type="text" id="Nombre"> </li></p>
+    <br>
+    <p class=""><li class="botonFormulario"> Apellido <input type="text" id="Apellido"> </li></p>
+    <br>
+    <a class="" href="PaginaPrincipalTarea.html"><input type="button" value="Iniciar" onclick="alert(NombreYapellido(Nombre,Apellido));"></a>
+
+</form>
+
+    <script>
+        var NombreR = "a";
+        var ApellidoR = "";
+    
+        var PaginaPrincipal = "PaginaPrincipalTarea.html"
+     
+
+        var NombreYapellido = function(Nombre, Apellido){
+     
+        var Nombre = document.getElementById("Nombre").value;
+        var Apellido = document.getElementById("Apellido").value;
+        NombreR = document.getElementById("Nombre").value;
+        ApellidoR = document.getElementById("Apellido").value;
+        localStorage.setItem("NOMBRE", NombreR + " " + ApellidoR);
+
+
+
+        return Nombre + " " + Apellido;
+        
+     }
+
+     
+    </script>   
+</body>
+
+</html>

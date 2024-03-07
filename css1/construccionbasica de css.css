@@ -1,0 +1,98 @@
+/* en este archivo externo escribimos los estilos de formato para nuestras */
+/* etiquetas, aqui voy a dejar algunas basicas para luego mejorar o usar otros tipos */
+
+/* manejo de fuentes */
+h1 {
+    font-size: 20px; /* cambio el tamaño del texto, en este caso para h1 */
+    font-family: sans-serif; /* cambia la fuente de letra */
+    font-weight: 100; /* cambia el grosor interno de las letras */
+    /* todas estas reglas puede escribirse en una sola linea usando font: */
+}
+
+/* puedo seleccionar varias etiquetas usando comas */
+h1, h2, h3, h4 {
+    border: 1px solid black; /* agrega un borde, primero va el grosor, luego el tipo, en este caso solid (linea) 
+    y el color*/
+    display: inline-block; /* cambia la forma en que ocupan los bloques sus espacios, en este caso, ocupan inline-block
+    es decir, solo ocupan el tamaño que necesitan y no consumen toda la linea, de lo contrario, seria block */
+
+
+}
+
+body {
+    text-align: center; /* podemos modificar el alineado del texto, sea a la derecha, izquierda, centro, o justificar
+    ojo, esto no cambia el alineado del bloque, ese se cambia mediante el padding y el margin,
+     que veremos ahora en un momento */
+    background-color: #CA7665;
+    /* podemos usar un hexadecimal para el color */
+
+
+}
+
+div {
+    color: white;
+    background-color: black;
+    width: 960px; /* cambio el ancho del bloque */
+    height: 650px; /* cambio la altura del bloque */
+    margin: auto; /* los margenes son el espaciado del bloque con otros 
+    esto pone el margen del bloque en automatico, ocupando el margen izq y der de igual forma
+    de modo que se centra el bloque */
+    margin-top: auto; /* podemos especificar cada margen, estando top, bottom, left, right, podemos especificar
+    o hacerlo automatico, que se adapta a la pantalla */
+    margin-bottom: 200px;
+
+    /* si usamos margin: y x donde el primer valor seran pixeles de arriba y hacia abajo, o un auto
+    y el x el valor de pixeles para izq y der o un auto */
+
+    /*luego, otra propiedad de los bloques es el relleno o padding, que son margenes internos para el contenido
+     mientras mas grande es, mas espacio vacio va hacia afuera y el espacio interno se achica */
+    padding: 0px;
+    
+
+
+
+
+}
+
+/* algo util que podria hacer con el padding y el margin es resetear los del navegador usando *   
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+
+}
+
+
+footer {
+    background-color: black;
+    color: white;
+}
+
+ul {
+    margin: 0;
+}
+
+/* poniendo espacios, le digo a afectar una etiqueta li que este dentro de un ul, tambien podria poner que 
+afecte a un li dentro de un ul dentro de una etiqueta con clase "blabla" y asi con cualquier etiqueta, usando clases
+o ids o lo que se quiera */
+.menu li {
+    color: black;
+    background-color: cyan;
+    display: inline-block;
+    margin-inline: 0px;
+    margin-block: 0px;
+    padding: 6px;
+    border: 0.5px;
+    border-style: ridge;
+    border-radius: 50px;
+    border-color: black;
+
+}
+
+
+aside {
+    
+
+
+}

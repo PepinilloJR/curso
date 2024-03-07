@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+
+<!--
+para empezar con css, debemos considerar el parametro de etiquetas style=""
+que es funcional a todas las etiquetas, esta etiqueta toma muchos valores
+que cambian el formato de nuestro html
+
+colocamos el parametro y en las comillas indicamos que formato queremos cambiar y despues sus
+dos puntos, donde agregamos el nuevo valor del formato, si queremos otro, separamos con ; 
+ejemplo:
+
+<div style="padding-left: 80px; background-color: blue; color: brown;"> texto </div>
+
+mover desde la izquierda 80 pixeles
+color de fondo Azul
+color de letra Marron
+
+puede recibir tanto como pixeles como un procentaje de la pantalla como otros valores
+eso es debido consultarlo en W33school
+
+lo que estamos haciendo se conoce como agregar CSS en linea
+es decir, modificamos directamente el estilo de cada una de las etiquetas, lo cual no es muy
+eficiente 
+
+una solucion es colocar, dentro de <head> otra etiqueta denominada <style></style>
+dentro de style, le indicaremos al navegador con que estilo se mostraran las etiquetas 
+cada vez que sean creadas
+
+el formato es el siguiente
+
+ <style>
+    nombre_de_etiqueta {
+        background: black
+        color: brown
+        ...
+        ...
+        etc
+
+
+
+    }
+
+    otra_etiqueta {
+        background: black
+        color: brown
+        ...
+        ...
+        etc
+
+
+    }
+
+    ....
+
+ </style>
+
+ si quisiesemos que solo ciertas etiquetas tengan el estilo para ciertos contextos
+ debemos empezar a usar selectores, por ejemplo si queremos 
+ utilizar los parametros id="" para cada etiqueta
+ ej: <nav id="navegacion"> </nav>
+
+ luego, si queremos que los que tengan esa ID tengan cierto formato, expresamos en style 
+ con un selector # y luego el nombre del ID
+
+ <style>
+    #nombre_de_id {
+        background: black
+        color: brown
+        ...
+        ...
+        etc
+
+
+
+    }
+ </style>
+
+ahora la etiqueta con ese ID sera colocada con el formato especificado en <style>
+luego, si queremos un identificador para usar un mismo formato con varias etiquetas 
+con ese identificador, usamos clases
+ ej: <nav class="navegadores"> </nav>
+
+luego, definimos en <style> como formatearemos esa clase, empezando el nombre con un  
+selector .
+
+<style>
+    .nombre_de_clase {
+        background: black
+        color: brown
+        ...
+        ...
+        etc
+
+
+
+    }
+
+    * {
+    margin: 0px
+
+    [parametro] {
+        background: black
+        color: brown
+        ...
+        ...
+        etc
+    }
+
+    }
+</style>
+
+ahora, toda etiqueta con esa clase se le aplicara el formato
+otra forma de hacer estos formatos globales es con el selector *
+que se aplicara a todas las etiquetas
+en el ejemplo aplicamos a todas las etiquetas que los margenes de cada bloque sea nulo
+
+otro selector util es el de parametros, [parametro] y le indica que a toda etiqueta que 
+este usando un parametro especifico, se le aplique un formato, podria ser por ejemplo 
+un parametro href o un parametro cite, se puede especificar que etiquetas con esos parametros
+del siguiente modo -> etiqueta[parametro] { formato... }
+
+
+otro metodo para estilizar es crear un archivo aparte de CSS para poder organizar mejor el codigo
+este archivo debe ser .css
+
+este se llama usando la etiqueta 
+<link rel="stylesheet" href="archivo.css">
+rel es el tipo de relacion que tendra con el html, en este caso stylesheet para referirse
+a un tipo de estilo, osea un CSS
+luego, en href le ingresamos el archivo
+
+
+
+continuando con mas etiquetas, podemos remarcar la etiqueta <form></form> que es un contenedor de inputs del usuario, usualmente usado para inputs
+ y <input type="text" name="" placeholder="blablabla">
+el input es una de las etiquetas mas complejas, el primer parametro es el type, que indica que tipo de input es, html5 tiene muchisimos 
+los tipos son demasiados por lo que conviene googlearlos, el name es el nombre del input, el placeholder es un texto que se pondra por encima del input 
+aun asi, input tiene muchisimos mas parametros, los cuales pueden investigarse 
+
+
+
+
+
+-->
+
+
+
+
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="Primer pagina con CSS">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Html con css god no????</title>
+        <link rel="stylesheet" href="construccionbasica de css.css">
+
+    </head>
+    <body>
+
+        <div>
+            <header>
+                <h1>TITULOS</h1>
+                <h2>
+                    rodriguez mata a larreta
+                </h2>
+            </header>
+            <ul class="menu">
+                <li>Principal</li>
+                <li>NO Principal</li>
+                <li>Informacion</li>
+                <li>Principal</li>
+                <li>NO Principal</li>
+                <li>Informacion</li>
+                <li>Principal</li>
+                <li>NO Principal</li>
+                <li>Informacion</li>
+            </ul>
+            <div class="lol">
+                <section>
+                    <article>
+                        <h1>titulo de articulo</h1>
+    
+                    </article>
+                    <article>
+                        <h1>titulo de articulo</h1>
+    
+                    </article>
+                    <article>
+                        <h1>titulo de articulo</h1>
+    
+                    </article>
+                    <article>
+                        <h1>titulo de articulo</h1>
+    
+                    </article>
+    
+                    <form>
+                        <input type="text" name="hola" placeholder="hola buenas tardes">
+
+                    </form>
+                </section>
+                <aside>
+                    esto es una lista:
+                    <ul>
+                        <li>Principal</li>
+                        <li>NO Principal</li>
+                    </ul>
+                </aside>
+            </div>
+        </div>
+
+    
+        
+        
+            <footer>
+                <p>
+                    todos los derechos reservados a mi mama 
+                </p>
+            </footer>
+            <footer>
+                <p>
+                    todos los derechos reservados a mi mama @
+                    .
+                    .
+
+                </p>
+                <h1>
+                    negros
+                </h1>
+                <h1>
+                    negros
+                </h1>
+                <h1>
+                    negros
+                </h1>
+            </footer>
+    </body>
+   
+
+</html>

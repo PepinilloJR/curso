@@ -1,0 +1,28 @@
+ver versiones 
+
+npm --version
+
+inicializar proyecto de node
+
+npm init 
+
+npm init -y --> todo por defecto
+
+toda dependencia que instalemos se vera en el package.json
+si la version de una dependencia empieza con ^, significa 
+que se ira actualizando en el proyecto cada vez que haya una nueva version
+
+a su vez, se creara una carpeta node_modules que conectara todos los modulos o paquetes
+al proyecto que estemos haciendo, SI INSTALAMOS un paquete que tiene dependencias, se instalaran
+su dependencias tambien, por lo que sera bastante grande con el tiempo
+
+existen 2 tipos de dependencias, las de produccion, que son usadas dentro del codigo y por lo tanto importantes para el funcionamiento
+y luego las de desarrollo, que son utilidades que ayudan al programador pero que no son nescesarias para el funcionamiento
+para indicar que queremos instalar un paquete para desarrolo, hacemos: npm install (paquete) -D
+estas se veran separadas de dependencies, en otra categoria llamada devDependencies
+
+existe otra categoria util dentro del .json, denominada scripts
+dentro de scripts, podemos decir que para palabras claves al insertar un comando
+dentro de la consola, se ejecute un script por detras
+por ejemplo "dev": "node script.js"
+cada vez que llamamos a dev, se ejecutara ademas script.js

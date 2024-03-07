@@ -1,0 +1,114 @@
+/* seteamos casi todo por defualt para poder modificar correctamente la pagina */
+
+* {
+   font-style: unset; 
+   font-weight: unset;
+   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+   margin: 0%;
+   padding: 0%;
+   text-decoration: none; /* este quita las decoraciones de texto, util para quitar subrayado a los links */
+}
+
+body {
+    background-image: url("https://s1.eestatic.com/2020/06/03/curiosidades/curiosidades_494961313_153077108_1706x960.jpg");
+    background-size: 100% 100%;
+
+}
+
+
+.presentacion {
+    margin-bottom: 0px;
+    margin-top: 0px;
+    font-family: Cambria;
+    font-weight: bold;
+    font-style: normal;
+    font-size: 20px;
+    color: white;
+    text-align: center;
+    padding: 200px;
+    /* continuando, podemos ver que se pueden agregar imagenes al background, usando lo siguiente */
+    background-image: url("data:image/jpeg;base64,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");
+    /* rellenamos todo el bloque con la imagen */
+    background-size: 100% 100%;
+}
+
+h2 {
+    background-color: black;
+    color: chartreuse;
+}
+
+.agrupacion {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+/* EL FLOAT sirve para decir que flote para izquierda o derecha y basicamente con eso podes formar algo asi como columnas, tienen que tener un tamaño 
+que no sobrepaso en su conjunto al bloque que las contiene porque si no se ve raro, por esto es mejor usar porcentajes antes que pixeles, asi se adaptan bien */
+
+/* si quiero resetear el float para algun bloque que venga debajo ponemos clear: both */
+
+.principal {
+    padding: 0;
+    width: 50%;
+    margin: 0%;
+    background-color: honeydew;
+    float: left;
+    
+    
+}
+
+.menuizquierdo {
+    padding: 0;
+    width: 50%;
+    margin: 0%;
+    background-color:cadetblue;
+    float: right;
+
+}
+
+.bloquesizquierdo {
+    background-color: bisque;
+    margin: 10px;
+    padding: 5px;
+}
+
+
+.menubotones {
+    text-align: center;
+    background-color: black;
+    display: block;
+    position:sticky;
+    top: 0px;
+}
+
+.boton {
+    border-color: azure;
+    border-width: 0.5px;
+    box-shadow: 1px;
+    border-style: groove;
+    padding: 10px;
+    display: inline-block;
+    color: chartreuse;
+    position:sticky;
+    top: 0px; 
+
+}
+
+.articulos{
+    margin: 2%;
+    background-color: bisque;
+    font-size: small;
+
+
+}
+
+/* por ultimo hay que ampliar otro concepto que es el position, esto es util antes de empezar con animaciones en css para luego entrar a javascript con react
+position tiene diferentes posibilidades y le dan un accionar a la posicion de los bloques
+
+el position: fixed mantiene el bloque en pantalla, por defecto expulsa al bloque en si de 
+otros bloques, por lo que puede ocupar mas de lo que se deseaba en primer lugar
+el position: relative posiciona en una ubicacion indicada al bloque
+el position: absolute posiciona al bloque dentro del bloque que lo contiene, no saliendo de este
+lo movemos con right, left, top, bottom

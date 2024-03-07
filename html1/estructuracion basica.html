@@ -1,0 +1,215 @@
+<!--la pagina index es la principal y es la que se accede al entrar al servidor ponele
+en html todo son etiquetas que referencian a un bloque de la pagina, como h1 h2...
+cada etiqueta se abre como el ejemplo de abajo 
+
+cada etiqueta puede tener parametros que se le ingresan para darle formato 
+
+<boton color="rojo" size="big"> lol xd </boton> 
+
+hay diferentes etiquetas con distintos usos y diferentes tipos 
+
+etiqueta que se abre y no cierra, util para espacios de linea... 
+
+<br>
+
+etiqueta que se abre y se cierra, para escribir dentro, con sus parametros al inicio... 
+
+
+<h1> titulo </h1> 
+
+etiqueta para informar que se usa la version mas nueva de html 
+
+<!DOCTYPE html> 
+
+si escribimos una etiqueta html, se creara la siguiente formacion
+dentro de html se guarda todo lo de la pagina
+luego, en head, se guarda todo lo que no se ve en la pagina, como puede serlo el titulo de 
+pestaña, que se coloca en la etiqueta title 
+
+en body va todo el cuerpo de la pagina y es donde construimos todo el entorno --> 
+
+<!DOCTYPE html> 
+<!-- version mas nueva! --> 
+
+<html lang="es">  
+<!-- atributo lang, string que indica el idioma de la pagina -->
+
+<head>
+	<!--etiqueta <meta></meta>, esta no se cierra, no tiene contenido dentro, 
+	Su propósito es el de incluir información (metadatos) de referencia sobre la página: 
+	autor, título, fecha, palabras clave, descripción, etc.
+	la etiqueta tiene parametros como name= que indica que tipo de etiqueta se usara
+	luego, el parametro content indica el contenido de esta etiqueta creada, en este ejemplo 
+	es una descripcion
+	ejemplos de parametros de meta -->
+
+	<!-- tipo de codificacion de caracteres, este caso utf-8 que incluye mayoria de letras -->
+	<meta charset="utf-8"> 
+	<meta name="description" content="esta es una pagina gay">
+	<!-- autor de la pagina -->
+	<meta name="author" content="Francisco Papu">
+	<!-- palabras clave de la busqueda, no muy usadas actualmente-->
+	<meta name="keywords" content="esta es una pagina gay, pagina web, pagina, messi">
+	<!-- el viewport es el area visible por el usuario, puede recibir datos como width y 
+	initial-scale, el primero es el tamaño de la pagina, el otro el nivel del zoom de la pagina
+	podemos igualar estos por ejemplo 1. por el tamaño del dispositivo y 2. por el zoom por default-->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+	<title>pagina web gay para gays</title>
+</head>
+	
+
+<body id="cuerpo">
+
+	<header> 
+		<!-- el <header> indica al navegador que lo de 
+		adentro va en el encabezado de la pagina -->
+
+		<h1>PAGINA PRINCIPAL</h1>  
+		<h2>subtitulo anashe </h2> 
+	</header> 
+	<h3>subtitulo anashe </h3> 
+	<h4>subtitulo anashe </h4> 
+	<h5>subtitulo anashe </h5> 
+	<h6>subtitulo anashe </h6>
+
+	<!--h1 se suele usar para titulos, debe existir una por pagina
+	h2 se usa para subtitulos 
+	h3 y h4 son subtemas de subtitulos y captan ideas sobre el subtitulo 
+	-->
+	<p>parrafo parrafo locuras</p> 
+	<b> negrita negrita negrita </b> 
+	<i> para letra italica </i>
+	<strike> usada para la letra tachada</strike> 
+	<small> letra chiquita chiquita</small> 
+	<!--
+	la etiqueta p se usa para escribir parrafos
+	la etiqueta b es usada para la negrita
+	etiqueta i es usada para la italica
+	etiqueta <strike> es usada para la teachada
+	letra chiquita 
+
+	las H completan la linea, mientras que etiquetas como p, q, i, strike, small no 
+	completan linea, si no que se adaptan al tamaño del contenido
+	esto ultimo nos permite por ejemplo, dentro de un parrafo, colocar en negrita cierta
+	parte del mismo, de la siguiente forma -->
+	<p>parrafo parrafo<b> locurasoscuras </b>locuras</p> 
+	<!--si usamos otra etiqueta que contenga a un H, completara la linea que ocupa en esa 
+	etiqueta, una etiqueta util para eso ultimo es <div></div>, que se emplea 
+	para definir un bloque de contenido de la  pagina al 
+	que se le aplica estilos y operaciones, es mas generico y sirve para dividir secciones de la pagina
+	este no le dice nada al navegador por lo que es util pero no deberiamos usarlo para todo
+	-->
+	<br>
+
+	<!-- otra etiqueta util es <nav>, <nav> indica al navegador que lo de dentro es una lista de navegacion
+	del estilo | principal | fotos | informacion | 
+	luego, podemos usar <ul></ul>, <ul> es una lista de objetos o etiquetas desordenadas, 
+	podemos usarla para crear un listado, cada objeto de la lista se incrusta con las 
+	etiquetas  <li></li> 
+	-->
+	<nav>
+		<ul>
+			<li>opcion1</li>
+			<li>opcion2</li>
+			<li>opcion3</li>
+		</ul>
+	</nav>
+	<!--
+	luego, la etiqueta <section></section> indica al navegador un bloque de la pagina distintiva y coherente
+	la section no puede ser parte de otro conjunto mas grande, o un bloque generico, para eso esta div
+
+	dentro de un section, podemos utilizar un <article></article>, utilizada para definir un contenido autónomo y de 
+	importancia en una página web. Por ejemplo, una entrada de blog, una revisión, una publicación en un foro, etc.
+	Este contenido se mostrará de forma independiente, y su idea es de ser reutilizable y facil de distribuir
+	cada <article> puede tener titulo con h1, fotos, parrafos, y demas cosas
+	si queremos agregarle por ejemplo, fecha a cada articulo, podemos usar otra etiqueta
+	como puede ser <time></time>, esta a su vez tiene un parametro datetime="dd-mm-yyyy" para informar
+	al navegador una fecha especifica, ayudando mas al ceo
+
+	para no dar un mismo nivel de jerarquia a los demas H usados para articulos y demas
+	usamos la etiqueta <hgroup></hgroup>, donde agrupamos todos los encabezados h1 y h2 y bla bla bla 
+
+	lo importante de <section>, es que en parte por asi decirlo, es como otro <body>, por lo tanto, podemos usar diferentes etiquetas dentro
+	como <footer>, otro <aside>, y todos las demas etiquetas que mencionamos, mientras mejor estructurado este, mejor se llevara con el ceo
+    
+	si quisieramos agregar una imagen por ejemplo, para una foto en el articulo, usamos <img src=""/>
+	donde src es la imagen, sea un link de internet o del propio equipo del computador
+	
+	-->
+	<section id="PRINCIPAL">
+		<article>
+			<time datetime="17-12-2030">17 de diciembre de 2030</time>
+			<hgroup>
+				<h1>Titulo de articulo</h1>
+				<h2>subtitulo</h2>
+			</hgroup>
+			<p>un tipo me robo la moto y estoy enojado, muy enojado</p>	
+			<img src="data:image/jpeg;base64,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"/>
+			<footer>Comentarios (0)</footer>
+		</article>
+		<article>
+			<time datetime="17-12-2030">17 de diciembre de 2030</time>
+			<hgroup>	
+				<h1>Titulo de articulo2</h1>
+				<h2>subtitulo</h2>
+			</hgroup>
+			<p>le robe a un tipo su moto y fue muy gracioso</p>	
+			<footer>Comentarios (0)</footer>
+		</article>
+		<article>
+			<time datetime="15-12-2030">15 de diciembre de 2030</time>
+			<hgroup>
+				<h1>Titulo de articulo2</h1>
+				<h2>subtitulo</h2>
+			</hgroup>
+			<p>me compre una nueva moto, estoy muy feliz</p>	
+			<footer>Comentarios (0)</footer>
+		</article>
+	</section>
+
+	<!--
+		luego, para contenido secundario no tan importante pero relacionado con la seccion 
+	principal o que podria ser interesante para el usuario, usamos la etiqueta <aside></aside>, que 
+	de nuevo, indica al motor de busqueda su proposito, no le da formato, pero lo usamos para
+	contenido lateral
+
+	si quisieramos ademas, agregar por ejemplo, una cita de un autor en el aside, debemos usar la etiqueta 
+	<blockquote></blockquote> para representar una cita, un parametro es cite="" que referencia a un link de donde 
+	fue sacada la cita, util para el ceo
+
+	hablando de links, para crear links, usamos la etiqueta <a> texto </a>, donde el parametro href="" indica la direccion
+	otro parametro es el target, que indica como abrira el link, el mas usado es _blank, que indica que se abre en nueva pestaña
+	si queremos informar al ceo de google que es un link a un sitio web, usamos <address></address>
+	-->
+
+	<aside>
+		<blockquote cite="http://culosycompañeros.com">
+			<address>
+				<a href="http://culosycompañeros.com" target="_blank">
+				Un buen culo es tambien un buen compañero.
+				Un buen compañero, no siempre es un buen culo.
+				</a>
+			</address>
+		</blockquote> 
+	</aside> 
+
+	<!-- luego, para el pie de pagina, util para colocar derechos, copyright, redes sociales, etc. -->
+
+	<footer>
+		derechos reservados
+	</footer>
+
+
+	<!-- otra etiqueta util es <span></span> que no tiene significado y se lo tiene que dar el
+		usuario mediante CSS y demas
+
+
+		hay muchisimas mas etiquetas que podemos usar, agregar videos, botones
+	-->
+
+
+
+</body>
+</html>
